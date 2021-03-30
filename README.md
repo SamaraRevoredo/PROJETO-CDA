@@ -13,7 +13,8 @@ Copie o seguinte comando e cole no terminal:
 
 
 
-##3. Primeiros passos do projeto:
+## 3. Primeiros passos do projeto:
 
 
-3.1 - Com o terminal para saber qual branch você está digite: >git branch
+3.1 - Com o terminal para saber qual branch você está digite:
+>git branch
