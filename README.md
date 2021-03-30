@@ -24,6 +24,7 @@ Copie o seguinte comando e cole no terminal:
 
 3.4 - Se estiver desenvolvendo um recurso novo como código separado do display LCD, funcionando da leitura AD e outros. Então crie uma branch feature:
 >git checkout -b feature_nomeBranch
+
 Continue seu trabalho e use o Git como de costume.
 
 
