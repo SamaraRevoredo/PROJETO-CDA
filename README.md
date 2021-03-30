@@ -18,3 +18,19 @@ Copie o seguinte comando e cole no terminal:
 
 3.1 - Com o terminal para saber qual branch você está digite:
 >git branch
+
+3.2 - Caso esteja na **master**, vá para a branch **develop**, então digite:
+>git checkout develop
+
+3.4 - Se estiver desenvolvendo um recurso novo como código separado do display LCD, funcionando da leitura AD e outros. Então crie uma branch feature:
+>git checkout -b feature_nomeBranch
+Continue seu trabalho e use o Git como de costume.
+
+
+3.5 - Quando você concluir o trabalho de desenvolvimento no recurso, a próxima etapa é mesclar a ramificação de recurso na de desenvolvimento:
+
+>git checkout develop
+>git merge feature_nomeBranch
+
+
+
