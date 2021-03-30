@@ -10,3 +10,10 @@ Pasta raíz de projeto.
 
 Copie o seguinte comando e cole no terminal: 
 > git clone https://github.com/SD-G2-S9/PROJETO-SDR.git
+
+
+
+##3. Primeiros passos do projeto:
+
+
+3.1 - Com o terminal para saber qual branch você está digite: >git branch
