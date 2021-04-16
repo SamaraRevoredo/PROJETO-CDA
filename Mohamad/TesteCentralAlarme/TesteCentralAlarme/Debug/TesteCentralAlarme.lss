@@ -3,312 +3,989 @@ TesteCentralAlarme.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000000  00800100  00800100  000001f2  2**0
+  0 .data         00000000  00800100  00800100  000005f4  2**0
                   ALLOC, LOAD, DATA
-  1 .text         00000080  00000000  00000000  00000054  2**1
+  1 .text         000000c2  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .comment      0000002f  00000000  00000000  000001f2  2**0
+  2 .bss          0000000f  00800100  00800100  000005f4  2**0
+                  ALLOC
+  3 .comment      0000002f  00000000  00000000  000005f4  2**0
                   CONTENTS, READONLY
-  3 .debug_aranges 00000038  00000000  00000000  00000221  2**0
+  4 .debug_aranges 00000080  00000000  00000000  00000623  2**0
                   CONTENTS, READONLY, DEBUGGING
-  4 .debug_info   00000949  00000000  00000000  00000259  2**0
+  5 .debug_info   00001331  00000000  00000000  000006a3  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_abbrev 00000684  00000000  00000000  00000ba2  2**0
+  6 .debug_abbrev 000007dc  00000000  00000000  000019d4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_line   00000310  00000000  00000000  00001226  2**0
+  7 .debug_line   000005fd  00000000  00000000  000021b0  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_frame  00000054  00000000  00000000  00001538  2**2
+  8 .debug_frame  00000130  00000000  00000000  000027b0  2**2
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_str    00000208  00000000  00000000  0000158c  2**0
+  9 .debug_str    00000216  00000000  00000000  000028e0  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_loc    0000008c  00000000  00000000  00001794  2**0
+ 10 .debug_loc    000005f9  00000000  00000000  00002af6  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_ranges 00000028  00000000  00000000  00001820  2**0
+ 11 .debug_ranges 00000070  00000000  00000000  000030ef  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .text         00000004  0000019a  0000019a  000001ee  2**1
+ 12 .text         00000004  0000055c  0000055c  000005f0  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 12 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00001848  2**2
+ 13 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00003160  2**2
                   CONTENTS, READONLY, DEBUGGING
- 13 .text.setupI2C 00000016  00000184  00000184  000001d8  2**1
+ 14 .text.delay_ms 00000054  000003dc  000003dc  00000470  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 14 .text.MT_transmit 00000066  000000e8  000000e8  0000013c  2**1
+ 15 .text.delay_ns 00000048  00000430  00000430  000004c4  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 15 .text.MT_receive 00000068  00000080  00000080  000000d4  2**1
+ 16 .text.setupI2C 00000016  00000530  00000530  000005c4  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 16 .text.main    00000036  0000014e  0000014e  000001a2  2**1
+ 17 .text.MT_transmit 00000066  000002ba  000002ba  0000034e  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 18 .text.MT_receive 00000062  00000320  00000320  000003b4  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 19 .text.send_instruction_lcd_i2c 0000005a  00000382  00000382  00000416  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 20 .text.send_instruction_lcd_nibble_i2c 0000002c  000004ba  000004ba  0000054e  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 21 .text.inicializa_display_i2c 0000009e  000000d2  000000d2  00000166  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 22 .text.send_word_lcd_i2c 00000068  00000252  00000252  000002e6  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 23 .text.set_DDRAM_ADDR_i2c 00000070  000001e2  000001e2  00000276  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 24 .text.envia_frase_i2c 0000002c  000004e6  000004e6  0000057a  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 25 .text.passarValor 00000042  00000478  00000478  0000050c  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 26 .progmemx.data 0000000f  000000c2  000000c2  00000156  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, PROGMEMX
+ 27 .text.main    00000072  00000170  00000170  00000204  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 28 .bss.x        00000004  0080010f  0080010f  000005f4  2**0
+                  ALLOC
+ 29 .text.libgcc.mul 00000016  00000546  00000546  000005da  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 30 .text.libgcc.mul 0000001e  00000512  00000512  000005a6  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
-   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
-   4:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-   8:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-   c:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-  10:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-  14:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-  18:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-  1c:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-  20:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-  24:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-  28:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-  2c:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-  30:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-  34:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-  38:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-  3c:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-  40:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-  44:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-  48:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-  4c:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-  50:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-  54:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-  58:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-  5c:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-  60:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
-  64:	0c 94 cd 00 	jmp	0x19a	; 0x19a <__bad_interrupt>
+   0:	0c 94 37 00 	jmp	0x6e	; 0x6e <__ctors_end>
+   4:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+   8:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+   c:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+  10:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+  14:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+  18:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+  1c:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+  20:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+  24:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+  28:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+  2c:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+  30:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+  34:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+  38:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+  3c:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+  40:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+  44:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+  48:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+  4c:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+  50:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+  54:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+  58:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+  5c:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+  60:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
+  64:	0c 94 ae 02 	jmp	0x55c	; 0x55c <__bad_interrupt>
 
-00000068 <__ctors_end>:
-  68:	11 24       	eor	r1, r1
-  6a:	1f be       	out	0x3f, r1	; 63
-  6c:	cf ef       	ldi	r28, 0xFF	; 255
-  6e:	d8 e0       	ldi	r29, 0x08	; 8
-  70:	de bf       	out	0x3e, r29	; 62
-  72:	cd bf       	out	0x3d, r28	; 61
-  74:	0e 94 a7 00 	call	0x14e	; 0x14e <main>
-  78:	0c 94 3e 00 	jmp	0x7c	; 0x7c <_exit>
+00000068 <.dinit>:
+  68:	01 00       	.word	0x0001	; ????
+  6a:	01 13       	cpse	r16, r17
+  6c:	80 00       	.word	0x0080	; ????
 
-0000007c <_exit>:
-  7c:	f8 94       	cli
+0000006e <__ctors_end>:
+  6e:	11 24       	eor	r1, r1
+  70:	1f be       	out	0x3f, r1	; 63
+  72:	cf ef       	ldi	r28, 0xFF	; 255
+  74:	d8 e0       	ldi	r29, 0x08	; 8
+  76:	de bf       	out	0x3e, r29	; 62
+  78:	cd bf       	out	0x3d, r28	; 61
 
-0000007e <__stop_program>:
-  7e:	ff cf       	rjmp	.-2      	; 0x7e <__stop_program>
+0000007a <__do_copy_data>:
+  7a:	e8 e6       	ldi	r30, 0x68	; 104
+  7c:	f0 e0       	ldi	r31, 0x00	; 0
+  7e:	40 e0       	ldi	r20, 0x00	; 0
+  80:	17 c0       	rjmp	.+46     	; 0xb0 <__do_clear_bss+0x8>
+  82:	b5 91       	lpm	r27, Z+
+  84:	a5 91       	lpm	r26, Z+
+  86:	35 91       	lpm	r19, Z+
+  88:	25 91       	lpm	r18, Z+
+  8a:	05 91       	lpm	r16, Z+
+  8c:	07 fd       	sbrc	r16, 7
+  8e:	0c c0       	rjmp	.+24     	; 0xa8 <__do_clear_bss>
+  90:	95 91       	lpm	r25, Z+
+  92:	85 91       	lpm	r24, Z+
+  94:	ef 01       	movw	r28, r30
+  96:	f9 2f       	mov	r31, r25
+  98:	e8 2f       	mov	r30, r24
+  9a:	05 90       	lpm	r0, Z+
+  9c:	0d 92       	st	X+, r0
+  9e:	a2 17       	cp	r26, r18
+  a0:	b3 07       	cpc	r27, r19
+  a2:	d9 f7       	brne	.-10     	; 0x9a <__do_copy_data+0x20>
+  a4:	fe 01       	movw	r30, r28
+  a6:	04 c0       	rjmp	.+8      	; 0xb0 <__do_clear_bss+0x8>
+
+000000a8 <__do_clear_bss>:
+  a8:	1d 92       	st	X+, r1
+  aa:	a2 17       	cp	r26, r18
+  ac:	b3 07       	cpc	r27, r19
+  ae:	e1 f7       	brne	.-8      	; 0xa8 <__do_clear_bss>
+  b0:	ed 36       	cpi	r30, 0x6D	; 109
+  b2:	f4 07       	cpc	r31, r20
+  b4:	31 f7       	brne	.-52     	; 0x82 <__do_copy_data+0x8>
+  b6:	0e 94 b8 00 	call	0x170	; 0x170 <main>
+  ba:	0c 94 5f 00 	jmp	0xbe	; 0xbe <_exit>
+
+000000be <_exit>:
+  be:	f8 94       	cli
+
+000000c0 <__stop_program>:
+  c0:	ff cf       	rjmp	.-2      	; 0xc0 <__stop_program>
 
 Disassembly of section .text:
 
-0000019a <__bad_interrupt>:
- 19a:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+0000055c <__bad_interrupt>:
+ 55c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+Disassembly of section .text.delay_ms:
+
+000003dc <delay_ms>:
+	l2C14,
+	l2C15,
+	l2C16
+};
+long int x = 0;
+void delay_ms(long int n){
+ 3dc:	9b 01       	movw	r18, r22
+ 3de:	ac 01       	movw	r20, r24
+	
+	
+	x = 0;
+ 3e0:	10 92 0f 01 	sts	0x010F, r1	; 0x80010f <_end>
+ 3e4:	10 92 10 01 	sts	0x0110, r1	; 0x800110 <_end+0x1>
+ 3e8:	10 92 11 01 	sts	0x0111, r1	; 0x800111 <_end+0x2>
+ 3ec:	10 92 12 01 	sts	0x0112, r1	; 0x800112 <_end+0x3>
+	
+	long int m = 1000 * n;
+ 3f0:	a8 ee       	ldi	r26, 0xE8	; 232
+ 3f2:	b3 e0       	ldi	r27, 0x03	; 3
+ 3f4:	0e 94 a3 02 	call	0x546	; 0x546 <__muluhisi3>
+ 3f8:	ab 01       	movw	r20, r22
+ 3fa:	bc 01       	movw	r22, r24
+	
+	while(x <= m){
+ 3fc:	0b c0       	rjmp	.+22     	; 0x414 <__EEPROM_REGION_LENGTH__+0x14>
+		x++;
+ 3fe:	01 96       	adiw	r24, 0x01	; 1
+ 400:	a1 1d       	adc	r26, r1
+ 402:	b1 1d       	adc	r27, r1
+ 404:	80 93 0f 01 	sts	0x010F, r24	; 0x80010f <_end>
+ 408:	90 93 10 01 	sts	0x0110, r25	; 0x800110 <_end+0x1>
+ 40c:	a0 93 11 01 	sts	0x0111, r26	; 0x800111 <_end+0x2>
+ 410:	b0 93 12 01 	sts	0x0112, r27	; 0x800112 <_end+0x3>
+	
+	x = 0;
+	
+	long int m = 1000 * n;
+	
+	while(x <= m){
+ 414:	80 91 0f 01 	lds	r24, 0x010F	; 0x80010f <_end>
+ 418:	90 91 10 01 	lds	r25, 0x0110	; 0x800110 <_end+0x1>
+ 41c:	a0 91 11 01 	lds	r26, 0x0111	; 0x800111 <_end+0x2>
+ 420:	b0 91 12 01 	lds	r27, 0x0112	; 0x800112 <_end+0x3>
+ 424:	48 17       	cp	r20, r24
+ 426:	59 07       	cpc	r21, r25
+ 428:	6a 07       	cpc	r22, r26
+ 42a:	7b 07       	cpc	r23, r27
+ 42c:	44 f7       	brge	.-48     	; 0x3fe <delay_ms+0x22>
+		x++;
+	}
+	
+	
+}
+ 42e:	08 95       	ret
+
+Disassembly of section .text.delay_ns:
+
+00000430 <delay_ns>:
+
+void delay_ns(long int n){
+ 430:	ab 01       	movw	r20, r22
+ 432:	bc 01       	movw	r22, r24
+	
+	
+	x = 0;
+ 434:	10 92 0f 01 	sts	0x010F, r1	; 0x80010f <_end>
+ 438:	10 92 10 01 	sts	0x0110, r1	; 0x800110 <_end+0x1>
+ 43c:	10 92 11 01 	sts	0x0111, r1	; 0x800111 <_end+0x2>
+ 440:	10 92 12 01 	sts	0x0112, r1	; 0x800112 <_end+0x3>
+	
+	long int m = 1 * n;
+	
+	while(x <= m){
+ 444:	0b c0       	rjmp	.+22     	; 0x45c <delay_ns+0x2c>
+		x++;
+ 446:	01 96       	adiw	r24, 0x01	; 1
+ 448:	a1 1d       	adc	r26, r1
+ 44a:	b1 1d       	adc	r27, r1
+ 44c:	80 93 0f 01 	sts	0x010F, r24	; 0x80010f <_end>
+ 450:	90 93 10 01 	sts	0x0110, r25	; 0x800110 <_end+0x1>
+ 454:	a0 93 11 01 	sts	0x0111, r26	; 0x800111 <_end+0x2>
+ 458:	b0 93 12 01 	sts	0x0112, r27	; 0x800112 <_end+0x3>
+	
+	x = 0;
+	
+	long int m = 1 * n;
+	
+	while(x <= m){
+ 45c:	80 91 0f 01 	lds	r24, 0x010F	; 0x80010f <_end>
+ 460:	90 91 10 01 	lds	r25, 0x0110	; 0x800110 <_end+0x1>
+ 464:	a0 91 11 01 	lds	r26, 0x0111	; 0x800111 <_end+0x2>
+ 468:	b0 91 12 01 	lds	r27, 0x0112	; 0x800112 <_end+0x3>
+ 46c:	48 17       	cp	r20, r24
+ 46e:	59 07       	cpc	r21, r25
+ 470:	6a 07       	cpc	r22, r26
+ 472:	7b 07       	cpc	r23, r27
+ 474:	44 f7       	brge	.-48     	; 0x446 <delay_ns+0x16>
+		x++;
+	}
+	
+	
+}
+ 476:	08 95       	ret
 
 Disassembly of section .text.setupI2C:
 
-00000184 <setupI2C>:
-	if(!(PINC & (1<<PINC3))) MT_receive(0x41);
+00000530 <setupI2C>:
+
 	}
 }
 
 void setupI2C(){
 	DDRC = 0x30; 
- 184:	80 e3       	ldi	r24, 0x30	; 48
- 186:	87 b9       	out	0x07, r24	; 7
+ 530:	80 e3       	ldi	r24, 0x30	; 48
+ 532:	87 b9       	out	0x07, r24	; 7
 	TWBR = (1<<TWBR1); // Configurando fator de divisão da taxa de bits para 2 
- 188:	82 e0       	ldi	r24, 0x02	; 2
- 18a:	80 93 b8 00 	sts	0x00B8, r24	; 0x8000b8 <__TEXT_REGION_LENGTH__+0x7f80b8>
+ 534:	82 e0       	ldi	r24, 0x02	; 2
+ 536:	80 93 b8 00 	sts	0x00B8, r24	; 0x8000b8 <__TEXT_REGION_LENGTH__+0x7f80b8>
 	TWSR |= (1<<TWPS1); // Configurando Prescaler da taxa  de bits para 16
- 18e:	e9 eb       	ldi	r30, 0xB9	; 185
- 190:	f0 e0       	ldi	r31, 0x00	; 0
- 192:	80 81       	ld	r24, Z
- 194:	82 60       	ori	r24, 0x02	; 2
- 196:	80 83       	st	Z, r24
- 198:	08 95       	ret
+ 53a:	e9 eb       	ldi	r30, 0xB9	; 185
+ 53c:	f0 e0       	ldi	r31, 0x00	; 0
+ 53e:	80 81       	ld	r24, Z
+ 540:	82 60       	ori	r24, 0x02	; 2
+ 542:	80 83       	st	Z, r24
+ 544:	08 95       	ret
 
 Disassembly of section .text.MT_transmit:
 
-000000e8 <MT_transmit>:
+000002ba <MT_transmit>:
 
 
 
 
 bool MT_transmit(uint8_t addr, uint8_t data){
 	TWCR = (1<< TWINT)|(1<<TWSTA)|(1<<TWEN); // start
-  e8:	94 ea       	ldi	r25, 0xA4	; 164
-  ea:	90 93 bc 00 	sts	0x00BC, r25	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 2ba:	94 ea       	ldi	r25, 0xA4	; 164
+ 2bc:	90 93 bc 00 	sts	0x00BC, r25	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
 	while (!(TWCR & (1<<TWINT)));
-  ee:	90 91 bc 00 	lds	r25, 0x00BC	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
-  f2:	99 23       	and	r25, r25
-  f4:	e4 f7       	brge	.-8      	; 0xee <MT_transmit+0x6>
+ 2c0:	90 91 bc 00 	lds	r25, 0x00BC	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 2c4:	99 23       	and	r25, r25
+ 2c6:	e4 f7       	brge	.-8      	; 0x2c0 <MT_transmit+0x6>
 	if ((TWSR & 0xF8) != START) return false; 
-  f6:	90 91 b9 00 	lds	r25, 0x00B9	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7f80b9>
-  fa:	98 7f       	andi	r25, 0xF8	; 248
-  fc:	98 30       	cpi	r25, 0x08	; 8
-  fe:	09 f5       	brne	.+66     	; 0x142 <MT_transmit+0x5a>
+ 2c8:	90 91 b9 00 	lds	r25, 0x00B9	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7f80b9>
+ 2cc:	98 7f       	andi	r25, 0xF8	; 248
+ 2ce:	98 30       	cpi	r25, 0x08	; 8
+ 2d0:	09 f5       	brne	.+66     	; 0x314 <MT_transmit+0x5a>
 	TWDR  = addr;				// envia endereço no modo de escrita
- 100:	80 93 bb 00 	sts	0x00BB, r24	; 0x8000bb <__TEXT_REGION_LENGTH__+0x7f80bb>
+ 2d2:	80 93 bb 00 	sts	0x00BB, r24	; 0x8000bb <__TEXT_REGION_LENGTH__+0x7f80bb>
 	TWCR = (1<<TWINT) | (1<<TWEN);
- 104:	84 e8       	ldi	r24, 0x84	; 132
- 106:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 2d6:	84 e8       	ldi	r24, 0x84	; 132
+ 2d8:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
 	while (!(TWCR & (1<<TWINT)));
- 10a:	80 91 bc 00 	lds	r24, 0x00BC	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
- 10e:	88 23       	and	r24, r24
- 110:	e4 f7       	brge	.-8      	; 0x10a <MT_transmit+0x22>
+ 2dc:	80 91 bc 00 	lds	r24, 0x00BC	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 2e0:	88 23       	and	r24, r24
+ 2e2:	e4 f7       	brge	.-8      	; 0x2dc <MT_transmit+0x22>
 	if ((TWSR & 0xF8) != MT_SLA_ACK) return false; 
- 112:	80 91 b9 00 	lds	r24, 0x00B9	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7f80b9>
- 116:	88 7f       	andi	r24, 0xF8	; 248
- 118:	88 31       	cpi	r24, 0x18	; 24
- 11a:	a9 f4       	brne	.+42     	; 0x146 <MT_transmit+0x5e>
+ 2e4:	80 91 b9 00 	lds	r24, 0x00B9	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7f80b9>
+ 2e8:	88 7f       	andi	r24, 0xF8	; 248
+ 2ea:	88 31       	cpi	r24, 0x18	; 24
+ 2ec:	a9 f4       	brne	.+42     	; 0x318 <MT_transmit+0x5e>
 	TWDR  = data;				// envia dados
- 11c:	60 93 bb 00 	sts	0x00BB, r22	; 0x8000bb <__TEXT_REGION_LENGTH__+0x7f80bb>
+ 2ee:	60 93 bb 00 	sts	0x00BB, r22	; 0x8000bb <__TEXT_REGION_LENGTH__+0x7f80bb>
 	TWCR = (1<<TWINT) | (1<<TWEN);
- 120:	84 e8       	ldi	r24, 0x84	; 132
- 122:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 2f2:	84 e8       	ldi	r24, 0x84	; 132
+ 2f4:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
 	while (!(TWCR & (1<<TWINT)));
- 126:	80 91 bc 00 	lds	r24, 0x00BC	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
- 12a:	88 23       	and	r24, r24
- 12c:	e4 f7       	brge	.-8      	; 0x126 <MT_transmit+0x3e>
+ 2f8:	80 91 bc 00 	lds	r24, 0x00BC	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 2fc:	88 23       	and	r24, r24
+ 2fe:	e4 f7       	brge	.-8      	; 0x2f8 <MT_transmit+0x3e>
 	if ((TWSR & 0xF8)!= MT_DATA_ACK) return false;
- 12e:	80 91 b9 00 	lds	r24, 0x00B9	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7f80b9>
- 132:	88 7f       	andi	r24, 0xF8	; 248
- 134:	88 32       	cpi	r24, 0x28	; 40
- 136:	49 f4       	brne	.+18     	; 0x14a <MT_transmit+0x62>
+ 300:	80 91 b9 00 	lds	r24, 0x00B9	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7f80b9>
+ 304:	88 7f       	andi	r24, 0xF8	; 248
+ 306:	88 32       	cpi	r24, 0x28	; 40
+ 308:	49 f4       	brne	.+18     	; 0x31c <MT_transmit+0x62>
 	TWCR = (1<<TWINT)|(1<<TWEN)|(1<<TWSTO); // stop
- 138:	84 e9       	ldi	r24, 0x94	; 148
- 13a:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 30a:	84 e9       	ldi	r24, 0x94	; 148
+ 30c:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
 	return true;
- 13e:	81 e0       	ldi	r24, 0x01	; 1
- 140:	08 95       	ret
+ 310:	81 e0       	ldi	r24, 0x01	; 1
+ 312:	08 95       	ret
 
 
 bool MT_transmit(uint8_t addr, uint8_t data){
 	TWCR = (1<< TWINT)|(1<<TWSTA)|(1<<TWEN); // start
 	while (!(TWCR & (1<<TWINT)));
 	if ((TWSR & 0xF8) != START) return false; 
- 142:	80 e0       	ldi	r24, 0x00	; 0
- 144:	08 95       	ret
+ 314:	80 e0       	ldi	r24, 0x00	; 0
+ 316:	08 95       	ret
 	TWDR  = addr;				// envia endereço no modo de escrita
 	TWCR = (1<<TWINT) | (1<<TWEN);
 	while (!(TWCR & (1<<TWINT)));
 	if ((TWSR & 0xF8) != MT_SLA_ACK) return false; 
- 146:	80 e0       	ldi	r24, 0x00	; 0
- 148:	08 95       	ret
+ 318:	80 e0       	ldi	r24, 0x00	; 0
+ 31a:	08 95       	ret
 	TWDR  = data;				// envia dados
 	TWCR = (1<<TWINT) | (1<<TWEN);
 	while (!(TWCR & (1<<TWINT)));
 	if ((TWSR & 0xF8)!= MT_DATA_ACK) return false;
- 14a:	80 e0       	ldi	r24, 0x00	; 0
+ 31c:	80 e0       	ldi	r24, 0x00	; 0
 	TWCR = (1<<TWINT)|(1<<TWEN)|(1<<TWSTO); // stop
 	return true;
 }
- 14c:	08 95       	ret
+ 31e:	08 95       	ret
 
 Disassembly of section .text.MT_receive:
 
-00000080 <MT_receive>:
+00000320 <MT_receive>:
 
 bool MT_receive(uint8_t addr){
 	TWCR = (1<< TWINT)|(1<<TWSTA)|(1<<TWEN); // start
-  80:	94 ea       	ldi	r25, 0xA4	; 164
-  82:	90 93 bc 00 	sts	0x00BC, r25	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 320:	94 ea       	ldi	r25, 0xA4	; 164
+ 322:	90 93 bc 00 	sts	0x00BC, r25	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
 	
 	while (!(TWCR & (1<<TWINT)));
-  86:	90 91 bc 00 	lds	r25, 0x00BC	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
-  8a:	99 23       	and	r25, r25
-  8c:	e4 f7       	brge	.-8      	; 0x86 <MT_receive+0x6>
+ 326:	90 91 bc 00 	lds	r25, 0x00BC	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 32a:	99 23       	and	r25, r25
+ 32c:	e4 f7       	brge	.-8      	; 0x326 <MT_receive+0x6>
 	if ((TWSR & 0xF8) != START) return false;
-  8e:	90 91 b9 00 	lds	r25, 0x00B9	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7f80b9>
-  92:	98 7f       	andi	r25, 0xF8	; 248
-  94:	98 30       	cpi	r25, 0x08	; 8
-  96:	11 f5       	brne	.+68     	; 0xdc <MT_receive+0x5c>
+ 32e:	90 91 b9 00 	lds	r25, 0x00B9	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7f80b9>
+ 332:	98 7f       	andi	r25, 0xF8	; 248
+ 334:	98 30       	cpi	r25, 0x08	; 8
+ 336:	f9 f4       	brne	.+62     	; 0x376 <MT_receive+0x56>
 	TWDR  = addr;				// envia endereço no modo de leitura
-  98:	80 93 bb 00 	sts	0x00BB, r24	; 0x8000bb <__TEXT_REGION_LENGTH__+0x7f80bb>
+ 338:	80 93 bb 00 	sts	0x00BB, r24	; 0x8000bb <__TEXT_REGION_LENGTH__+0x7f80bb>
 	TWCR = (1<<TWINT) | (1<<TWEN);
-  9c:	84 e8       	ldi	r24, 0x84	; 132
-  9e:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 33c:	84 e8       	ldi	r24, 0x84	; 132
+ 33e:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
 	while (!(TWCR & (1<<TWINT)));
-  a2:	80 91 bc 00 	lds	r24, 0x00BC	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
-  a6:	88 23       	and	r24, r24
-  a8:	e4 f7       	brge	.-8      	; 0xa2 <MT_receive+0x22>
+ 342:	80 91 bc 00 	lds	r24, 0x00BC	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 346:	88 23       	and	r24, r24
+ 348:	e4 f7       	brge	.-8      	; 0x342 <MT_receive+0x22>
 	if ((TWSR & 0xF8) != MR_SLA_ACK) return false;	// confere ACK do escravo após endereçamento
-  aa:	80 91 b9 00 	lds	r24, 0x00B9	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7f80b9>
-  ae:	88 7f       	andi	r24, 0xF8	; 248
-  b0:	80 34       	cpi	r24, 0x40	; 64
-  b2:	b1 f4       	brne	.+44     	; 0xe0 <MT_receive+0x60>
+ 34a:	80 91 b9 00 	lds	r24, 0x00B9	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7f80b9>
+ 34e:	88 7f       	andi	r24, 0xF8	; 248
+ 350:	80 34       	cpi	r24, 0x40	; 64
+ 352:	99 f4       	brne	.+38     	; 0x37a <MT_receive+0x5a>
 	
 	TWCR = (1<<TWINT) | (1<<TWEN);					// Recebe byte de dados
-  b4:	84 e8       	ldi	r24, 0x84	; 132
-  b6:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 354:	84 e8       	ldi	r24, 0x84	; 132
+ 356:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
 	while (!(TWCR & (1<<TWINT)));
-  ba:	80 91 bc 00 	lds	r24, 0x00BC	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
-  be:	88 23       	and	r24, r24
-  c0:	e4 f7       	brge	.-8      	; 0xba <MT_receive+0x3a>
+ 35a:	80 91 bc 00 	lds	r24, 0x00BC	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 35e:	88 23       	and	r24, r24
+ 360:	e4 f7       	brge	.-8      	; 0x35a <MT_receive+0x3a>
 	if ((TWSR & 0xF8) != MR_DATA_NACK) return false;
-  c2:	80 91 b9 00 	lds	r24, 0x00B9	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7f80b9>
-  c6:	88 7f       	andi	r24, 0xF8	; 248
-  c8:	88 35       	cpi	r24, 0x58	; 88
-  ca:	61 f4       	brne	.+24     	; 0xe4 <MT_receive+0x64>
+ 362:	80 91 b9 00 	lds	r24, 0x00B9	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7f80b9>
+ 366:	88 7f       	andi	r24, 0xF8	; 248
+ 368:	88 35       	cpi	r24, 0x58	; 88
+ 36a:	49 f4       	brne	.+18     	; 0x37e <MT_receive+0x5e>
 	
 	TWCR = (1<<TWINT)|(1<<TWEN)|(1<<TWSTO); // stop
-  cc:	84 e9       	ldi	r24, 0x94	; 148
-  ce:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
-	PORTD = TWDR;
-  d2:	80 91 bb 00 	lds	r24, 0x00BB	; 0x8000bb <__TEXT_REGION_LENGTH__+0x7f80bb>
-  d6:	8b b9       	out	0x0b, r24	; 11
+ 36c:	84 e9       	ldi	r24, 0x94	; 148
+ 36e:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
 	return true;
-  d8:	81 e0       	ldi	r24, 0x01	; 1
-  da:	08 95       	ret
+ 372:	81 e0       	ldi	r24, 0x01	; 1
+ 374:	08 95       	ret
 
 bool MT_receive(uint8_t addr){
 	TWCR = (1<< TWINT)|(1<<TWSTA)|(1<<TWEN); // start
 	
 	while (!(TWCR & (1<<TWINT)));
 	if ((TWSR & 0xF8) != START) return false;
-  dc:	80 e0       	ldi	r24, 0x00	; 0
-  de:	08 95       	ret
+ 376:	80 e0       	ldi	r24, 0x00	; 0
+ 378:	08 95       	ret
 	TWDR  = addr;				// envia endereço no modo de leitura
 	TWCR = (1<<TWINT) | (1<<TWEN);
 	while (!(TWCR & (1<<TWINT)));
 	if ((TWSR & 0xF8) != MR_SLA_ACK) return false;	// confere ACK do escravo após endereçamento
-  e0:	80 e0       	ldi	r24, 0x00	; 0
-  e2:	08 95       	ret
+ 37a:	80 e0       	ldi	r24, 0x00	; 0
+ 37c:	08 95       	ret
 	
 	TWCR = (1<<TWINT) | (1<<TWEN);					// Recebe byte de dados
 	while (!(TWCR & (1<<TWINT)));
 	if ((TWSR & 0xF8) != MR_DATA_NACK) return false;
-  e4:	80 e0       	ldi	r24, 0x00	; 0
+ 37e:	80 e0       	ldi	r24, 0x00	; 0
 	
 	TWCR = (1<<TWINT)|(1<<TWEN)|(1<<TWSTO); // stop
-	PORTD = TWDR;
 	return true;
 }
-  e6:	08 95       	ret
+ 380:	08 95       	ret
+
+Disassembly of section .text.send_instruction_lcd_i2c:
+
+00000382 <send_instruction_lcd_i2c>:
+
+
+void send_instruction_lcd_i2c(uint8_t data){
+ 382:	cf 93       	push	r28
+ 384:	df 93       	push	r29
+ 386:	c8 2f       	mov	r28, r24
+	uint8_t aux_inst = 0x00;
+	
+	aux_inst &= ~(1<<RS);  // RS = 0 => intruções
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 388:	60 e0       	ldi	r22, 0x00	; 0
+ 38a:	82 e4       	ldi	r24, 0x42	; 66
+ 38c:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+	aux_inst |= (1 << EN);  // Seta o enable
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 390:	60 e2       	ldi	r22, 0x20	; 32
+ 392:	82 e4       	ldi	r24, 0x42	; 66
+ 394:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+	aux_inst |= (data >> 4); // seta barramento de dados com nibble mais significativo
+ 398:	dc 2f       	mov	r29, r28
+ 39a:	d2 95       	swap	r29
+ 39c:	df 70       	andi	r29, 0x0F	; 15
+ 39e:	6d 2f       	mov	r22, r29
+ 3a0:	60 62       	ori	r22, 0x20	; 32
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 3a2:	82 e4       	ldi	r24, 0x42	; 66
+ 3a4:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+	aux_inst &= ~(1<<EN);  // EN = 0
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 3a8:	6d 2f       	mov	r22, r29
+ 3aa:	82 e4       	ldi	r24, 0x42	; 66
+ 3ac:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+
+	
+	aux_inst &= 0x00;
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 3b0:	60 e0       	ldi	r22, 0x00	; 0
+ 3b2:	82 e4       	ldi	r24, 0x42	; 66
+ 3b4:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+	aux_inst |= (1 << EN);  // Seta o enable
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 3b8:	60 e2       	ldi	r22, 0x20	; 32
+ 3ba:	82 e4       	ldi	r24, 0x42	; 66
+ 3bc:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+	aux_inst |= data & 0x0F; // seta barramento de dados com nibble mais significativo
+ 3c0:	cf 70       	andi	r28, 0x0F	; 15
+ 3c2:	c0 62       	ori	r28, 0x20	; 32
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 3c4:	6c 2f       	mov	r22, r28
+ 3c6:	82 e4       	ldi	r24, 0x42	; 66
+ 3c8:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+	aux_inst &= ~(1<<EN);  // EN = 0
+ 3cc:	6c 2f       	mov	r22, r28
+ 3ce:	6f 7d       	andi	r22, 0xDF	; 223
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 3d0:	82 e4       	ldi	r24, 0x42	; 66
+ 3d2:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+
+}
+ 3d6:	df 91       	pop	r29
+ 3d8:	cf 91       	pop	r28
+ 3da:	08 95       	ret
+
+Disassembly of section .text.send_instruction_lcd_nibble_i2c:
+
+000004ba <send_instruction_lcd_nibble_i2c>:
+
+void send_instruction_lcd_nibble_i2c(uint8_t data){
+ 4ba:	cf 93       	push	r28
+ 4bc:	c8 2f       	mov	r28, r24
+	uint8_t aux_inst = 0x00;
+	aux_inst &= ~(1<<RS);  // RS = 0 => intruções
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 4be:	60 e0       	ldi	r22, 0x00	; 0
+ 4c0:	82 e4       	ldi	r24, 0x42	; 66
+ 4c2:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+	aux_inst |= (1 << EN);  // Seta o enable
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 4c6:	60 e2       	ldi	r22, 0x20	; 32
+ 4c8:	82 e4       	ldi	r24, 0x42	; 66
+ 4ca:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+	aux_inst |= data; // seta barramento de dados com nibble mais significativo
+ 4ce:	6c 2f       	mov	r22, r28
+ 4d0:	60 62       	ori	r22, 0x20	; 32
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 4d2:	82 e4       	ldi	r24, 0x42	; 66
+ 4d4:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+	aux_inst &= ~(1<<EN);  // EN = 0
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 4d8:	6c 2f       	mov	r22, r28
+ 4da:	6f 7d       	andi	r22, 0xDF	; 223
+ 4dc:	82 e4       	ldi	r24, 0x42	; 66
+ 4de:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+}
+ 4e2:	cf 91       	pop	r28
+ 4e4:	08 95       	ret
+
+Disassembly of section .text.inicializa_display_i2c:
+
+000000d2 <inicializa_display_i2c>:
+
+
+
+void inicializa_display_i2c(){
+	
+	delay_ms(15);
+  d2:	6f e0       	ldi	r22, 0x0F	; 15
+  d4:	70 e0       	ldi	r23, 0x00	; 0
+  d6:	80 e0       	ldi	r24, 0x00	; 0
+  d8:	90 e0       	ldi	r25, 0x00	; 0
+  da:	0e 94 ee 01 	call	0x3dc	; 0x3dc <delay_ms>
+
+	send_instruction_lcd_nibble_i2c(0x03);
+  de:	83 e0       	ldi	r24, 0x03	; 3
+  e0:	0e 94 5d 02 	call	0x4ba	; 0x4ba <send_instruction_lcd_nibble_i2c>
+	delay_ms(5);
+  e4:	65 e0       	ldi	r22, 0x05	; 5
+  e6:	70 e0       	ldi	r23, 0x00	; 0
+  e8:	80 e0       	ldi	r24, 0x00	; 0
+  ea:	90 e0       	ldi	r25, 0x00	; 0
+  ec:	0e 94 ee 01 	call	0x3dc	; 0x3dc <delay_ms>
+
+	send_instruction_lcd_nibble_i2c(0x03);
+  f0:	83 e0       	ldi	r24, 0x03	; 3
+  f2:	0e 94 5d 02 	call	0x4ba	; 0x4ba <send_instruction_lcd_nibble_i2c>
+	delay_ns(100);
+  f6:	64 e6       	ldi	r22, 0x64	; 100
+  f8:	70 e0       	ldi	r23, 0x00	; 0
+  fa:	80 e0       	ldi	r24, 0x00	; 0
+  fc:	90 e0       	ldi	r25, 0x00	; 0
+  fe:	0e 94 18 02 	call	0x430	; 0x430 <delay_ns>
+
+	send_instruction_lcd_nibble_i2c(0x03);//
+ 102:	83 e0       	ldi	r24, 0x03	; 3
+ 104:	0e 94 5d 02 	call	0x4ba	; 0x4ba <send_instruction_lcd_nibble_i2c>
+	delay_ns(40);
+ 108:	68 e2       	ldi	r22, 0x28	; 40
+ 10a:	70 e0       	ldi	r23, 0x00	; 0
+ 10c:	80 e0       	ldi	r24, 0x00	; 0
+ 10e:	90 e0       	ldi	r25, 0x00	; 0
+ 110:	0e 94 18 02 	call	0x430	; 0x430 <delay_ns>
+	
+	send_instruction_lcd_nibble_i2c(0x02);//
+ 114:	82 e0       	ldi	r24, 0x02	; 2
+ 116:	0e 94 5d 02 	call	0x4ba	; 0x4ba <send_instruction_lcd_nibble_i2c>
+	delay_ns(40);
+ 11a:	68 e2       	ldi	r22, 0x28	; 40
+ 11c:	70 e0       	ldi	r23, 0x00	; 0
+ 11e:	80 e0       	ldi	r24, 0x00	; 0
+ 120:	90 e0       	ldi	r25, 0x00	; 0
+ 122:	0e 94 18 02 	call	0x430	; 0x430 <delay_ns>
+
+	send_instruction_lcd_i2c(0x28); // function set
+ 126:	88 e2       	ldi	r24, 0x28	; 40
+ 128:	0e 94 c1 01 	call	0x382	; 0x382 <send_instruction_lcd_i2c>
+	delay_ns(40);
+ 12c:	68 e2       	ldi	r22, 0x28	; 40
+ 12e:	70 e0       	ldi	r23, 0x00	; 0
+ 130:	80 e0       	ldi	r24, 0x00	; 0
+ 132:	90 e0       	ldi	r25, 0x00	; 0
+ 134:	0e 94 18 02 	call	0x430	; 0x430 <delay_ns>
+
+	send_instruction_lcd_i2c(0x01); // clear display
+ 138:	81 e0       	ldi	r24, 0x01	; 1
+ 13a:	0e 94 c1 01 	call	0x382	; 0x382 <send_instruction_lcd_i2c>
+	delay_ms(2);
+ 13e:	62 e0       	ldi	r22, 0x02	; 2
+ 140:	70 e0       	ldi	r23, 0x00	; 0
+ 142:	80 e0       	ldi	r24, 0x00	; 0
+ 144:	90 e0       	ldi	r25, 0x00	; 0
+ 146:	0e 94 ee 01 	call	0x3dc	; 0x3dc <delay_ms>
+	send_instruction_lcd_i2c(0x06); //
+ 14a:	86 e0       	ldi	r24, 0x06	; 6
+ 14c:	0e 94 c1 01 	call	0x382	; 0x382 <send_instruction_lcd_i2c>
+	delay_ns(40);
+ 150:	68 e2       	ldi	r22, 0x28	; 40
+ 152:	70 e0       	ldi	r23, 0x00	; 0
+ 154:	80 e0       	ldi	r24, 0x00	; 0
+ 156:	90 e0       	ldi	r25, 0x00	; 0
+ 158:	0e 94 18 02 	call	0x430	; 0x430 <delay_ns>
+
+	send_instruction_lcd_i2c(0x0C); // display
+ 15c:	8c e0       	ldi	r24, 0x0C	; 12
+ 15e:	0e 94 c1 01 	call	0x382	; 0x382 <send_instruction_lcd_i2c>
+	delay_ns(40);
+ 162:	68 e2       	ldi	r22, 0x28	; 40
+ 164:	70 e0       	ldi	r23, 0x00	; 0
+ 166:	80 e0       	ldi	r24, 0x00	; 0
+ 168:	90 e0       	ldi	r25, 0x00	; 0
+ 16a:	0e 94 18 02 	call	0x430	; 0x430 <delay_ns>
+ 16e:	08 95       	ret
+
+Disassembly of section .text.send_word_lcd_i2c:
+
+00000252 <send_word_lcd_i2c>:
+	
+}
+
+
+void send_word_lcd_i2c(uint8_t data){
+ 252:	cf 93       	push	r28
+ 254:	df 93       	push	r29
+ 256:	c8 2f       	mov	r28, r24
+	uint8_t aux_inst = 0x00;
+	
+	aux_inst |= (1<<RS);  // RS = 1 => dados
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 258:	60 e8       	ldi	r22, 0x80	; 128
+ 25a:	82 e4       	ldi	r24, 0x42	; 66
+ 25c:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+	aux_inst |= (1 << EN);  // Seta o enable
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 260:	60 ea       	ldi	r22, 0xA0	; 160
+ 262:	82 e4       	ldi	r24, 0x42	; 66
+ 264:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+	aux_inst |= (data >> 4);// seta barramento de dados com nibble mais significativo
+ 268:	dc 2f       	mov	r29, r28
+ 26a:	d2 95       	swap	r29
+ 26c:	df 70       	andi	r29, 0x0F	; 15
+ 26e:	6d 2f       	mov	r22, r29
+ 270:	60 6a       	ori	r22, 0xA0	; 160
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 272:	82 e4       	ldi	r24, 0x42	; 66
+ 274:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+	aux_inst &= ~(1<<EN);  // EN = 0
+ 278:	6d 2f       	mov	r22, r29
+ 27a:	60 68       	ori	r22, 0x80	; 128
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 27c:	82 e4       	ldi	r24, 0x42	; 66
+ 27e:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+
+	
+	aux_inst &= 0xF0;
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 282:	60 e8       	ldi	r22, 0x80	; 128
+ 284:	82 e4       	ldi	r24, 0x42	; 66
+ 286:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+	aux_inst |= (1 << EN);  // Seta o enable
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 28a:	60 ea       	ldi	r22, 0xA0	; 160
+ 28c:	82 e4       	ldi	r24, 0x42	; 66
+ 28e:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+	aux_inst |= data & 0x0F; // seta barramento de dados com nibble menos significativo
+ 292:	cf 70       	andi	r28, 0x0F	; 15
+ 294:	c0 6a       	ori	r28, 0xA0	; 160
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 296:	6c 2f       	mov	r22, r28
+ 298:	82 e4       	ldi	r24, 0x42	; 66
+ 29a:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+	aux_inst &= ~(1<<EN);  // EN = 0
+ 29e:	6c 2f       	mov	r22, r28
+ 2a0:	6f 7d       	andi	r22, 0xDF	; 223
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 2a2:	82 e4       	ldi	r24, 0x42	; 66
+ 2a4:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+
+
+	delay_ns(43);
+ 2a8:	6b e2       	ldi	r22, 0x2B	; 43
+ 2aa:	70 e0       	ldi	r23, 0x00	; 0
+ 2ac:	80 e0       	ldi	r24, 0x00	; 0
+ 2ae:	90 e0       	ldi	r25, 0x00	; 0
+ 2b0:	0e 94 18 02 	call	0x430	; 0x430 <delay_ns>
+
+}
+ 2b4:	df 91       	pop	r29
+ 2b6:	cf 91       	pop	r28
+ 2b8:	08 95       	ret
+
+Disassembly of section .text.set_DDRAM_ADDR_i2c:
+
+000001e2 <set_DDRAM_ADDR_i2c>:
+
+
+void set_DDRAM_ADDR_i2c(uint8_t pos){
+ 1e2:	cf 93       	push	r28
+ 1e4:	df 93       	push	r29
+	uint8_t data = 0x80 | pos;
+ 1e6:	c8 2f       	mov	r28, r24
+ 1e8:	c0 68       	ori	r28, 0x80	; 128
+	uint8_t aux_inst = 0x00;
+	aux_inst &= 0xC0;
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 1ea:	60 e0       	ldi	r22, 0x00	; 0
+ 1ec:	82 e4       	ldi	r24, 0x42	; 66
+ 1ee:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+	aux_inst &= ~(1<<RS);  // RS = 0 => intruções
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 1f2:	60 e0       	ldi	r22, 0x00	; 0
+ 1f4:	82 e4       	ldi	r24, 0x42	; 66
+ 1f6:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+	aux_inst |= (1 << EN);  // Seta o enable
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 1fa:	60 e2       	ldi	r22, 0x20	; 32
+ 1fc:	82 e4       	ldi	r24, 0x42	; 66
+ 1fe:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+	aux_inst |= (data >> 4); // seta barramento de dados com nibble mais significativo
+ 202:	dc 2f       	mov	r29, r28
+ 204:	d2 95       	swap	r29
+ 206:	df 70       	andi	r29, 0x0F	; 15
+ 208:	6d 2f       	mov	r22, r29
+ 20a:	60 62       	ori	r22, 0x20	; 32
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 20c:	82 e4       	ldi	r24, 0x42	; 66
+ 20e:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+	aux_inst &= ~(1<<EN);  // EN = 0
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 212:	6d 2f       	mov	r22, r29
+ 214:	82 e4       	ldi	r24, 0x42	; 66
+ 216:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+	aux_inst &= 0xC0;
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 21a:	60 e0       	ldi	r22, 0x00	; 0
+ 21c:	82 e4       	ldi	r24, 0x42	; 66
+ 21e:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+	aux_inst |= (1 << EN);  // Seta o enable
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 222:	60 e2       	ldi	r22, 0x20	; 32
+ 224:	82 e4       	ldi	r24, 0x42	; 66
+ 226:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+	aux_inst |= data & 0x0F; // seta barramento de dados com nibble menos significativo
+ 22a:	cf 70       	andi	r28, 0x0F	; 15
+ 22c:	c0 62       	ori	r28, 0x20	; 32
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 22e:	6c 2f       	mov	r22, r28
+ 230:	82 e4       	ldi	r24, 0x42	; 66
+ 232:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+	aux_inst &= ~(1<<EN);  // EN = 0
+ 236:	6c 2f       	mov	r22, r28
+ 238:	6f 7d       	andi	r22, 0xDF	; 223
+	MT_transmit(addr_LCD_escrita,aux_inst);
+ 23a:	82 e4       	ldi	r24, 0x42	; 66
+ 23c:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+
+	delay_ns(43);
+ 240:	6b e2       	ldi	r22, 0x2B	; 43
+ 242:	70 e0       	ldi	r23, 0x00	; 0
+ 244:	80 e0       	ldi	r24, 0x00	; 0
+ 246:	90 e0       	ldi	r25, 0x00	; 0
+ 248:	0e 94 18 02 	call	0x430	; 0x430 <delay_ns>
+}
+ 24c:	df 91       	pop	r29
+ 24e:	cf 91       	pop	r28
+ 250:	08 95       	ret
+
+Disassembly of section .text.envia_frase_i2c:
+
+000004e6 <envia_frase_i2c>:
+
+void envia_frase_i2c(char *frase,uint8_t pos){
+ 4e6:	0f 93       	push	r16
+ 4e8:	1f 93       	push	r17
+ 4ea:	cf 93       	push	r28
+ 4ec:	8c 01       	movw	r16, r24
+ 4ee:	86 2f       	mov	r24, r22
+	set_DDRAM_ADDR_i2c(pos);
+ 4f0:	0e 94 f1 00 	call	0x1e2	; 0x1e2 <set_DDRAM_ADDR_i2c>
+	uint8_t cont = 0;
+ 4f4:	c0 e0       	ldi	r28, 0x00	; 0
+	while(frase[cont] != '\0'){
+ 4f6:	03 c0       	rjmp	.+6      	; 0x4fe <envia_frase_i2c+0x18>
+		send_word_lcd_i2c(frase[cont]);
+ 4f8:	0e 94 29 01 	call	0x252	; 0x252 <send_word_lcd_i2c>
+		cont++;
+ 4fc:	cf 5f       	subi	r28, 0xFF	; 255
+}
+
+void envia_frase_i2c(char *frase,uint8_t pos){
+	set_DDRAM_ADDR_i2c(pos);
+	uint8_t cont = 0;
+	while(frase[cont] != '\0'){
+ 4fe:	f8 01       	movw	r30, r16
+ 500:	ec 0f       	add	r30, r28
+ 502:	f1 1d       	adc	r31, r1
+ 504:	80 81       	ld	r24, Z
+ 506:	81 11       	cpse	r24, r1
+ 508:	f7 cf       	rjmp	.-18     	; 0x4f8 <envia_frase_i2c+0x12>
+		send_word_lcd_i2c(frase[cont]);
+		cont++;
+	}
+}
+ 50a:	cf 91       	pop	r28
+ 50c:	1f 91       	pop	r17
+ 50e:	0f 91       	pop	r16
+ 510:	08 95       	ret
+
+Disassembly of section .text.passarValor:
+
+00000478 <passarValor>:
+
+void passarValor(const char *data){
+ 478:	cf 92       	push	r12
+ 47a:	df 92       	push	r13
+ 47c:	ef 92       	push	r14
+ 47e:	6b 01       	movw	r12, r22
+ 480:	e8 2e       	mov	r14, r24
+	uint8_t cont_valor = 0;
+ 482:	80 e0       	ldi	r24, 0x00	; 0
+	while(data[cont_valor] != '\0'){
+ 484:	06 c0       	rjmp	.+12     	; 0x492 <passarValor+0x1a>
+		aux_string[cont_valor] = data[cont_valor];
+ 486:	e8 2f       	mov	r30, r24
+ 488:	f0 e0       	ldi	r31, 0x00	; 0
+ 48a:	e0 50       	subi	r30, 0x00	; 0
+ 48c:	ff 4f       	sbci	r31, 0xFF	; 255
+ 48e:	90 83       	st	Z, r25
+	cont_valor++;
+ 490:	8f 5f       	subi	r24, 0xFF	; 255
+	}
+}
+
+void passarValor(const char *data){
+	uint8_t cont_valor = 0;
+	while(data[cont_valor] != '\0'){
+ 492:	4e 2d       	mov	r20, r14
+ 494:	96 01       	movw	r18, r12
+ 496:	28 0f       	add	r18, r24
+ 498:	31 1d       	adc	r19, r1
+ 49a:	41 1d       	adc	r20, r1
+ 49c:	f9 01       	movw	r30, r18
+ 49e:	94 91       	lpm	r25, Z
+ 4a0:	47 fd       	sbrc	r20, 7
+ 4a2:	90 81       	ld	r25, Z
+ 4a4:	91 11       	cpse	r25, r1
+ 4a6:	ef cf       	rjmp	.-34     	; 0x486 <passarValor+0xe>
+		aux_string[cont_valor] = data[cont_valor];
+	cont_valor++;
+	}
+	aux_string[cont_valor] = '\0';
+ 4a8:	e8 2f       	mov	r30, r24
+ 4aa:	f0 e0       	ldi	r31, 0x00	; 0
+ 4ac:	e0 50       	subi	r30, 0x00	; 0
+ 4ae:	ff 4f       	sbci	r31, 0xFF	; 255
+ 4b0:	10 82       	st	Z, r1
+ 4b2:	ef 90       	pop	r14
+ 4b4:	df 90       	pop	r13
+ 4b6:	cf 90       	pop	r12
+ 4b8:	08 95       	ret
 
 Disassembly of section .text.main:
 
-0000014e <main>:
-#define MR_DATA_ACK 0x50
-#define MR_DATA_NACK 0x58
-
+00000170 <main>:
+	
+	
+}
 int main(void)
 {
 	setupI2C();
- 14e:	0e 94 c2 00 	call	0x184	; 0x184 <setupI2C>
-	PORTB = 0x00;
- 152:	15 b8       	out	0x05, r1	; 5
+ 170:	0e 94 98 02 	call	0x530	; 0x530 <setupI2C>
+	DDRB = 0x0F;
+ 174:	8f e0       	ldi	r24, 0x0F	; 15
+ 176:	84 b9       	out	0x04, r24	; 4
+	PORTB = 0xF0;
+ 178:	80 ef       	ldi	r24, 0xF0	; 240
+ 17a:	85 b9       	out	0x05, r24	; 5
 	PORTC |= (1<<PORTC3);
- 154:	88 b1       	in	r24, 0x08	; 8
- 156:	88 60       	ori	r24, 0x08	; 8
- 158:	88 b9       	out	0x08, r24	; 8
+ 17c:	88 b1       	in	r24, 0x08	; 8
+ 17e:	88 60       	ori	r24, 0x08	; 8
+ 180:	88 b9       	out	0x08, r24	; 8
 	if(!MT_transmit(0x40,0xff)) PORTB = 0xFF;
- 15a:	6f ef       	ldi	r22, 0xFF	; 255
- 15c:	80 e4       	ldi	r24, 0x40	; 64
- 15e:	0e 94 74 00 	call	0xe8	; 0xe8 <MT_transmit>
- 162:	81 11       	cpse	r24, r1
- 164:	02 c0       	rjmp	.+4      	; 0x16a <main+0x1c>
- 166:	8f ef       	ldi	r24, 0xFF	; 255
- 168:	85 b9       	out	0x05, r24	; 5
+ 182:	6f ef       	ldi	r22, 0xFF	; 255
+ 184:	80 e4       	ldi	r24, 0x40	; 64
+ 186:	0e 94 5d 01 	call	0x2ba	; 0x2ba <MT_transmit>
+ 18a:	81 11       	cpse	r24, r1
+ 18c:	02 c0       	rjmp	.+4      	; 0x192 <main+0x22>
+ 18e:	8f ef       	ldi	r24, 0xFF	; 255
+ 190:	85 b9       	out	0x05, r24	; 5
 	if(!MT_receive(0x41)) PORTB = 0xAF;
- 16a:	81 e4       	ldi	r24, 0x41	; 65
- 16c:	0e 94 40 00 	call	0x80	; 0x80 <_etext>
- 170:	81 11       	cpse	r24, r1
- 172:	02 c0       	rjmp	.+4      	; 0x178 <main+0x2a>
- 174:	8f ea       	ldi	r24, 0xAF	; 175
- 176:	85 b9       	out	0x05, r24	; 5
-
-
+ 192:	81 e4       	ldi	r24, 0x41	; 65
+ 194:	0e 94 90 01 	call	0x320	; 0x320 <MT_receive>
+ 198:	81 11       	cpse	r24, r1
+ 19a:	02 c0       	rjmp	.+4      	; 0x1a0 <main+0x30>
+ 19c:	8f ea       	ldi	r24, 0xAF	; 175
+ 19e:	85 b9       	out	0x05, r24	; 5
+	inicializa_display_i2c();
+ 1a0:	0e 94 69 00 	call	0xd2	; 0xd2 <inicializa_display_i2c>
+	passarValor("DIGITE A SENHA");
+ 1a4:	62 ec       	ldi	r22, 0xC2	; 194
+ 1a6:	70 e0       	ldi	r23, 0x00	; 0
+ 1a8:	80 e0       	ldi	r24, 0x00	; 0
+ 1aa:	0e 94 3c 02 	call	0x478	; 0x478 <passarValor>
+	envia_frase_i2c(aux_string,l1C1);
+ 1ae:	60 e0       	ldi	r22, 0x00	; 0
+ 1b0:	80 e0       	ldi	r24, 0x00	; 0
+ 1b2:	91 e0       	ldi	r25, 0x01	; 1
+ 1b4:	0e 94 73 02 	call	0x4e6	; 0x4e6 <envia_frase_i2c>
+	set_DDRAM_ADDR_i2c(l2C7);
+ 1b8:	86 e4       	ldi	r24, 0x46	; 70
+ 1ba:	0e 94 f1 00 	call	0x1e2	; 0x1e2 <set_DDRAM_ADDR_i2c>
+	
+	uint8_t testeChar = '*';
+	for(int i = 0; i < 4; i++) send_word_lcd_i2c(testeChar);
+ 1be:	c0 e0       	ldi	r28, 0x00	; 0
+ 1c0:	d0 e0       	ldi	r29, 0x00	; 0
+ 1c2:	04 c0       	rjmp	.+8      	; 0x1cc <main+0x5c>
+ 1c4:	8a e2       	ldi	r24, 0x2A	; 42
+ 1c6:	0e 94 29 01 	call	0x252	; 0x252 <send_word_lcd_i2c>
+ 1ca:	21 96       	adiw	r28, 0x01	; 1
+ 1cc:	c4 30       	cpi	r28, 0x04	; 4
+ 1ce:	d1 05       	cpc	r29, r1
+ 1d0:	cc f3       	brlt	.-14     	; 0x1c4 <main+0x54>
+	DDRD = 0xFE;
+ 1d2:	8e ef       	ldi	r24, 0xFE	; 254
+ 1d4:	8a b9       	out	0x0a, r24	; 10
     while(1)
     {
         //TODO:: Please write your application code 
 	if(!(PINC & (1<<PINC3))) MT_receive(0x41);
- 178:	33 99       	sbic	0x06, 3	; 6
- 17a:	fe cf       	rjmp	.-4      	; 0x178 <main+0x2a>
- 17c:	81 e4       	ldi	r24, 0x41	; 65
- 17e:	0e 94 40 00 	call	0x80	; 0x80 <_etext>
- 182:	fa cf       	rjmp	.-12     	; 0x178 <main+0x2a>
+ 1d6:	33 99       	sbic	0x06, 3	; 6
+ 1d8:	fe cf       	rjmp	.-4      	; 0x1d6 <main+0x66>
+ 1da:	81 e4       	ldi	r24, 0x41	; 65
+ 1dc:	0e 94 90 01 	call	0x320	; 0x320 <MT_receive>
+ 1e0:	fa cf       	rjmp	.-12     	; 0x1d6 <main+0x66>
+
+Disassembly of section .text.libgcc.mul:
+
+00000546 <__muluhisi3>:
+ 546:	0e 94 89 02 	call	0x512	; 0x512 <__umulhisi3>
+ 54a:	a5 9f       	mul	r26, r21
+ 54c:	90 0d       	add	r25, r0
+ 54e:	b4 9f       	mul	r27, r20
+ 550:	90 0d       	add	r25, r0
+ 552:	a4 9f       	mul	r26, r20
+ 554:	80 0d       	add	r24, r0
+ 556:	91 1d       	adc	r25, r1
+ 558:	11 24       	eor	r1, r1
+ 55a:	08 95       	ret
+
+Disassembly of section .text.libgcc.mul:
+
+00000512 <__umulhisi3>:
+ 512:	a2 9f       	mul	r26, r18
+ 514:	b0 01       	movw	r22, r0
+ 516:	b3 9f       	mul	r27, r19
+ 518:	c0 01       	movw	r24, r0
+ 51a:	a3 9f       	mul	r26, r19
+ 51c:	70 0d       	add	r23, r0
+ 51e:	81 1d       	adc	r24, r1
+ 520:	11 24       	eor	r1, r1
+ 522:	91 1d       	adc	r25, r1
+ 524:	b2 9f       	mul	r27, r18
+ 526:	70 0d       	add	r23, r0
+ 528:	81 1d       	adc	r24, r1
+ 52a:	11 24       	eor	r1, r1
+ 52c:	91 1d       	adc	r25, r1
+ 52e:	08 95       	ret
