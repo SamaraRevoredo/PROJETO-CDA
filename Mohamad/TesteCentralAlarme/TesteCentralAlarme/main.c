@@ -12,7 +12,6 @@ typedef enum { false, true } bool;
 
 #define addr_LCD_escrita 0x42
 #define addr_LCD_leitura 0x43
-
 void setupI2C();
 bool MT_transmit(uint8_t addr, uint8_t data);
 bool MT_receive(uint8_t addr);
@@ -22,7 +21,45 @@ bool MT_receive(uint8_t addr);
 #define MT_DATA_ACK 0x28
 #define MR_DATA_ACK 0x50
 #define MR_DATA_NACK 0x58
-
+//MDE
+bool flag_timeout = false;
+uint8_t ultima_tecla;
+void rotina_geral_dos_botoes();
+uint8_t modo;
+void rotina_programacao();
+void rotina_desativado();
+void rotina_ativado();
+enum modos{
+	desativado,
+	ativado,
+	programacao
+	};
+enum teclas{
+	nenhuma_tecla,
+	t_1,
+	t_2,
+	t_3,
+	t_p,
+	t_4,
+	t_5,
+	t_6,
+	t_a,
+	t_7,
+	t_8,
+	t_9,
+	t_d,
+	t_r,
+	t_0,
+	t_s,
+	t_e
+};
+enum permissao{
+	acesso_negado,
+	ativacao,
+	mestre
+	};
+	
+bool leitura_senha(bool modo_leitura);
 // LCD
 void send_instruction_lcd(uint8_t data);
 void send_instruction_lcd_nibble(uint8_t data);
@@ -129,11 +166,22 @@ int main(void)
 	DDRD = 0xFE;
     while(1)
     {
-        //TODO:: Please write your application code 
-	if(!(PINC & (1<<PINC3))) MT_receive(0x41);
-
+		rotina_geral_dos_botoes();
+		switch (modo)
+		{
+			case desativado:
+				rotina_desativado();
+			break;
+			case ativado:
+				rotina_ativado();
+			break;
+			case programacao:
+				rotina_programacao();
+			break;			
+		}
 	}
 }
+
 
 void setupI2C(){
 	DDRC = 0x30; 
@@ -317,4 +365,43 @@ void passarValor(const char *data){
 	cont_valor++;
 	}
 	aux_string[cont_valor] = '\0';
+}
+
+
+// MDE
+ 
+void rotina_desativado(){
+	if(ultima_tecla == t_p){
+		// display: "digite senha mestre"
+
+	}
+	else if(ultima_tecla == t_a){
+		
+	}
+}
+
+bool leitura_senha(bool modo_leitura){
+	rotina_geral_dos_botoes();
+	if(flag_timeout || ultima_tecla == t_r || ultima_tecla == t_s){
+		flag_timeout = false;
+		return false;
+	}
+	return true;
+}
+
+
+bool algarismo(uint8_t tecla){
+	if( tecla != t_p && tecla != t_a && tecla != t_d 
+		&& tecla != t_e && tecla != t_s && tecla != t_r && tecla != nenhuma_tecla  )return true;
+	return false;
+			
+
+}
+
+void rotina_ativado(){
+}
+void rotina_programacao(){
+	
+}
+void rotina_geral_dos_botoes(){
 }
