@@ -2,8 +2,10 @@ Archive member included to satisfy reference by file (symbol)
 
 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
                               C:/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o (exit)
+c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+                              main.o (__tablejump2__)
 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
-                              main.o (__do_clear_bss)
+                              main.o (__do_copy_data)
 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
                               main.o (__muluhisi3)
 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_umulhisi3.o)
@@ -13,8 +15,16 @@ Allocating common symbols
 Common symbol       size              file
 
 ultima_tecla        0x1               main.o
-modo                0x1               main.o
-aux_string          0xf               main.o
+minuto              0x1               main.o
+dia                 0x1               main.o
+hora                0x1               main.o
+zona_habilita       0x1               main.o
+sensores_zona       0x3               main.o
+sensores_habilitados
+                    0x1               main.o
+dez_hora            0x1               main.o
+aux_string          0x10              main.o
+dez_minuto          0x1               main.o
 
 Discarded input sections
 
@@ -23,20 +33,24 @@ Discarded input sections
  .text          0x0000000000000000        0x0 main.o
  .data          0x0000000000000000        0x0 main.o
  .bss           0x0000000000000000        0x0 main.o
- .text.rotina_desativado
-                0x0000000000000000        0x2 main.o
- .text.leitura_senha
+ .text.ler_RTC  0x0000000000000000       0x62 main.o
+ .text.print_RTC
+                0x0000000000000000       0xaa main.o
+ .progmem.gcc_sw_table.print_RTC
+                0x0000000000000000        0xe main.o
+ .text.print_tecla
+                0x0000000000000000      0x180 main.o
+ .progmem.gcc_sw_table.print_tecla
                 0x0000000000000000       0x20 main.o
- .text.algarismo
-                0x0000000000000000       0x3a main.o
- .text.rotina_ativado
+ .text.get_tecla
+                0x0000000000000000       0xd6 main.o
+ .progmem.gcc_sw_table.get_tecla
+                0x0000000000000000       0x20 main.o
+ .progmemx.data.T1_comp
                 0x0000000000000000        0x2 main.o
- .text.rotina_programacao
+ .progmemx.data.T1_init
                 0x0000000000000000        0x2 main.o
- .text.rotina_geral_dos_botoes
-                0x0000000000000000        0x2 main.o
- .bss.flag_timeout
-                0x0000000000000000        0x1 main.o
+ .bss.i         0x0000000000000000        0x1 main.o
  .text          0x0000000000000000        0x0 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
  .data          0x0000000000000000        0x0 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
  .bss           0x0000000000000000        0x0 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
@@ -53,6 +67,21 @@ Discarded input sections
                 0x0000000000000000        0x0 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
  .text.libgcc.fixed
                 0x0000000000000000        0x0 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .text          0x0000000000000000        0x0 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+ .data          0x0000000000000000        0x0 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+ .bss           0x0000000000000000        0x0 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
  .text          0x0000000000000000        0x0 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
  .data          0x0000000000000000        0x0 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
  .bss           0x0000000000000000        0x0 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
@@ -224,52 +253,56 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000       0xc2
+.text           0x0000000000000000      0x102
  *(.vectors)
  .vectors       0x0000000000000000       0x68 C:/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
                 0x0000000000000000                __vector_default
                 0x0000000000000000                __vectors
  *(.vectors)
  *(.progmem.gcc*)
+ .progmem.gcc_sw_table.get_numero
+                0x0000000000000068       0x16 main.o
+ .progmem.gcc_sw_table.rotina_programacao
+                0x000000000000007e       0x12 main.o
  *(.dinit)
- .dinit         0x0000000000000068        0x5 data_init
-                0x000000000000006e                . = ALIGN (0x2)
- *fill*         0x000000000000006d        0x1 
-                0x000000000000006e                __trampolines_start = .
+ .dinit         0x0000000000000090       0x1d data_init
+                0x00000000000000ae                . = ALIGN (0x2)
+ *fill*         0x00000000000000ad        0x1 
+                0x00000000000000ae                __trampolines_start = .
  *(.trampolines)
- .trampolines   0x000000000000006e        0x0 linker stubs
+ .trampolines   0x00000000000000ae        0x0 linker stubs
  *(.trampolines*)
-                0x000000000000006e                __trampolines_end = .
+                0x00000000000000ae                __trampolines_end = .
  *libprintf_flt.a:*(.progmem.data)
  *libc.a:*(.progmem.data)
-                0x000000000000006e                . = ALIGN (0x2)
+                0x00000000000000ae                . = ALIGN (0x2)
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x000000000000006e                __ctors_start = .
+                0x00000000000000ae                __ctors_start = .
  *(.ctors)
-                0x000000000000006e                __ctors_end = .
-                0x000000000000006e                __dtors_start = .
+                0x00000000000000ae                __ctors_end = .
+                0x00000000000000ae                __dtors_start = .
  *(.dtors)
-                0x000000000000006e                __dtors_end = .
+                0x00000000000000ae                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x000000000000006e        0x0 C:/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
-                0x000000000000006e                __init
+ .init0         0x00000000000000ae        0x0 C:/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
+                0x00000000000000ae                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x000000000000006e        0xc C:/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
+ .init2         0x00000000000000ae        0xc C:/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x000000000000007a       0x3c c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
-                0x000000000000007a                __do_copy_data
-                0x00000000000000a8                __do_clear_bss
+ .init4         0x00000000000000ba       0x3c c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+                0x00000000000000ba                __do_copy_data
+                0x00000000000000e8                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -280,13 +313,13 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x00000000000000b6        0x8 C:/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
+ .init9         0x00000000000000f6        0x8 C:/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
  *(.init9)
-                0x00000000000000be                . = ALIGN (0x2)
+                0x00000000000000fe                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000000000000be        0x0 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
-                0x00000000000000be                _exit
-                0x00000000000000be                exit
+ .fini9         0x00000000000000fe        0x0 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+                0x00000000000000fe                _exit
+                0x00000000000000fe                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -305,11 +338,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000000000000be        0x4 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .fini0         0x00000000000000fe        0x4 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000000000000c2                _etext = .
+                0x0000000000000102                _etext = .
 
-.data           0x0000000000800100        0x0 load address 0x00000000000000c2
+.data           0x0000000000800100        0x0 load address 0x0000000000000102
                 [!provide]                        PROVIDE (__data_start, .)
  *(.gnu.linkonce.d*)
  *(.gnu.linkonce.r*)
@@ -317,22 +350,29 @@ END GROUP
                 0x0000000000800100                _edata = .
                 [!provide]                        PROVIDE (__data_end, .)
 
-.bss            0x0000000000800100       0x11
+.bss            0x0000000000800100       0x1b
                 [!provide]                        PROVIDE (__bss_start, .)
  *(COMMON)
- COMMON         0x0000000000800100       0x11 main.o
+ COMMON         0x0000000000800100       0x1b main.o
                 0x0000000000800100                ultima_tecla
-                0x0000000000800101                modo
-                0x0000000000800102                aux_string
+                0x0000000000800101                minuto
+                0x0000000000800102                dia
+                0x0000000000800103                hora
+                0x0000000000800104                zona_habilita
+                0x0000000000800105                sensores_zona
+                0x0000000000800108                sensores_habilitados
+                0x0000000000800109                dez_hora
+                0x000000000080010a                aux_string
+                0x000000000080011a                dez_minuto
                 [!provide]                        PROVIDE (__bss_end, .)
-                0x00000000000000c2                __data_load_start = LOADADDR (.data)
-                0x00000000000000c2                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x0000000000000102                __data_load_start = LOADADDR (.data)
+                0x0000000000000102                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0000000000800111        0x0
+.noinit         0x000000000080011b        0x0
                 [!provide]                        PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                        PROVIDE (__noinit_end, .)
-                0x0000000000800111                _end = .
+                0x000000000080011b                _end = .
 
 .eeprom         0x0000000000810000        0x0
  *(.eeprom*)
@@ -391,41 +431,41 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000       0xb0
+.debug_aranges  0x0000000000000000      0x118
  *(.debug_aranges)
  .debug_aranges
-                0x0000000000000000       0xb0 main.o
+                0x0000000000000000      0x118 main.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x1535
+.debug_info     0x0000000000000000     0x2adf
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x5f4 C:/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
- .debug_info    0x00000000000005f4      0xf41 main.o
+ .debug_info    0x00000000000005f4     0x24eb main.o
 
-.debug_abbrev   0x0000000000000000      0x80e
+.debug_abbrev   0x0000000000000000      0x886
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x5a2 C:/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
- .debug_abbrev  0x00000000000005a2      0x26c main.o
+ .debug_abbrev  0x00000000000005a2      0x2e4 main.o
 
-.debug_line     0x0000000000000000      0x6da
+.debug_line     0x0000000000000000     0x118e
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x137 C:/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
- .debug_line    0x0000000000000137      0x5a3 main.o
+ .debug_line    0x0000000000000137     0x1057 main.o
 
-.debug_frame    0x0000000000000000      0x190
+.debug_frame    0x0000000000000000      0x2f8
  *(.debug_frame)
- .debug_frame   0x0000000000000000      0x190 main.o
+ .debug_frame   0x0000000000000000      0x2f8 main.o
 
-.debug_str      0x0000000000000000      0x216
+.debug_str      0x0000000000000000      0x235
  *(.debug_str)
  .debug_str     0x0000000000000000      0x208 C:/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
- .debug_str     0x0000000000000208        0xe main.o
+ .debug_str     0x0000000000000208       0x2d main.o
 
-.debug_loc      0x0000000000000000      0x6d1
+.debug_loc      0x0000000000000000      0xf2d
  *(.debug_loc)
- .debug_loc     0x0000000000000000      0x6d1 main.o
+ .debug_loc     0x0000000000000000      0xf2d main.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -445,9 +485,9 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000       0xa0
+.debug_ranges   0x0000000000000000      0x198
  *(.debug_ranges)
- .debug_ranges  0x0000000000000000       0xa0 main.o
+ .debug_ranges  0x0000000000000000      0x198 main.o
 
 .debug_macro
  *(.debug_macro)
@@ -460,124 +500,289 @@ LOAD data_init
  .note.gnu.avr.deviceinfo
                 0x0000000000000000       0x40 C:/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
 
-.bss.x          0x0000000000800111        0x4
- .bss.x         0x0000000000800111        0x4 main.o
-                0x0000000000800111                x
+.bss.x          0x000000000080012b        0x4
+ .bss.x         0x000000000080012b        0x4 main.o
+                0x000000000080012b                x
 
-.progmemx.data  0x00000000000000c2        0xf
+.bss.validade_senha
+                0x0000000000800139        0x1
+ .bss.validade_senha
+                0x0000000000800139        0x1 main.o
+                0x0000000000800139                validade_senha
+
+.bss.contador_senha
+                0x000000000080013a        0x1
+ .bss.contador_senha
+                0x000000000080013a        0x1 main.o
+                0x000000000080013a                contador_senha
+
+.bss.modo       0x000000000080013b        0x1
+ .bss.modo      0x000000000080013b        0x1 main.o
+                0x000000000080013b                modo
+
+.bss.contador_R
+                0x000000000080012f        0x2
+ .bss.contador_R
+                0x000000000080012f        0x2 main.o
+                0x000000000080012f                contador_R
+
+.bss.contador   0x0000000000800131        0x2
+ .bss.contador  0x0000000000800131        0x2 main.o
+                0x0000000000800131                contador
+
+.bss.flag_ativacao
+                0x000000000080013c        0x1
+ .bss.flag_ativacao
+                0x000000000080013c        0x1 main.o
+                0x000000000080013c                flag_ativacao
+
+.bss.flag_alarme
+                0x000000000080013d        0x1
+ .bss.flag_alarme
+                0x000000000080013d        0x1 main.o
+                0x000000000080013d                flag_alarme
+
+.bss.limite_ativacao
+                0x0000000000800133        0x2
+ .bss.limite_ativacao
+                0x0000000000800133        0x2 main.o
+                0x0000000000800133                limite_ativacao
+
+.bss.limite_sirene
+                0x0000000000800135        0x2
+ .bss.limite_sirene
+                0x0000000000800135        0x2 main.o
+                0x0000000000800135                limite_sirene
+
+.bss.flag_timeout
+                0x000000000080013e        0x1
+ .bss.flag_timeout
+                0x000000000080013e        0x1 main.o
+                0x000000000080013e                flag_timeout
+
+.progmemx.data  0x0000000000000102       0xdf
  .progmemx.data
-                0x00000000000000c2        0xf main.o
+                0x0000000000000102       0xdf main.o
+
+.progmemx.data.senha_fabrica
+                0x00000000000001e1       0x10
+ .progmemx.data.senha_fabrica
+                0x00000000000001e1       0x10 main.o
+                0x00000000000001e1                senha_fabrica
+
+.text.leitura_senha
+                0x00000000000001f2      0x1b8
+ .text.leitura_senha
+                0x00000000000001f2      0x1b8 main.o
+                0x00000000000001f2                leitura_senha
+
+.text.rotina_programacao
+                0x00000000000003aa      0x144
+ .text.rotina_programacao
+                0x00000000000003aa      0x144 main.o
+                0x00000000000003aa                rotina_programacao
+
+.text.altera_senha
+                0x00000000000004ee      0x124
+ .text.altera_senha
+                0x00000000000004ee      0x124 main.o
+                0x00000000000004ee                altera_senha
+
+.text.__vector_11
+                0x0000000000000612      0x11c
+ .text.__vector_11
+                0x0000000000000612      0x11c main.o
+                0x0000000000000612                __vector_11
+
+.text.rotina_desativado
+                0x000000000000072e       0xa0
+ .text.rotina_desativado
+                0x000000000000072e       0xa0 main.o
+                0x000000000000072e                rotina_desativado
 
 .text.inicializa_display_i2c
-                0x00000000000000d2       0x9e
+                0x00000000000007ce       0x9e
  .text.inicializa_display_i2c
-                0x00000000000000d2       0x9e main.o
-                0x00000000000000d2                inicializa_display_i2c
+                0x00000000000007ce       0x9e main.o
+                0x00000000000007ce                inicializa_display_i2c
+
+.text.main      0x000000000000086c       0x96
+ .text.main     0x000000000000086c       0x96 main.o
+                0x000000000000086c                main
+
+.text.rotina_recuperacao
+                0x0000000000000902       0x90
+ .text.rotina_recuperacao
+                0x0000000000000902       0x90 main.o
+                0x0000000000000902                rotina_recuperacao
+
+.text.rotina_geral_dos_botoes
+                0x0000000000000992       0x84
+ .text.rotina_geral_dos_botoes
+                0x0000000000000992       0x84 main.o
+                0x0000000000000992                rotina_geral_dos_botoes
+
+.text.leitura_sensores
+                0x0000000000000a16       0x80
+ .text.leitura_sensores
+                0x0000000000000a16       0x80 main.o
+                0x0000000000000a16                leitura_sensores
 
 .text.set_DDRAM_ADDR_i2c
-                0x0000000000000170       0x70
+                0x0000000000000a96       0x70
  .text.set_DDRAM_ADDR_i2c
-                0x0000000000000170       0x70 main.o
-                0x0000000000000170                set_DDRAM_ADDR_i2c
+                0x0000000000000a96       0x70 main.o
+                0x0000000000000a96                set_DDRAM_ADDR_i2c
 
 .text.send_word_lcd_i2c
-                0x00000000000001e0       0x68
+                0x0000000000000b06       0x68
  .text.send_word_lcd_i2c
-                0x00000000000001e0       0x68 main.o
-                0x00000000000001e0                send_word_lcd_i2c
-
-.text.main      0x0000000000000248       0x68
- .text.main     0x0000000000000248       0x68 main.o
-                0x0000000000000248                main
+                0x0000000000000b06       0x68 main.o
+                0x0000000000000b06                send_word_lcd_i2c
 
 .text.MT_transmit
-                0x00000000000002b0       0x66
+                0x0000000000000b6e       0x66
  .text.MT_transmit
-                0x00000000000002b0       0x66 main.o
-                0x00000000000002b0                MT_transmit
+                0x0000000000000b6e       0x66 main.o
+                0x0000000000000b6e                MT_transmit
 
 .text.MT_receive
-                0x0000000000000316       0x62
+                0x0000000000000bd4       0x62
  .text.MT_receive
-                0x0000000000000316       0x62 main.o
-                0x0000000000000316                MT_receive
+                0x0000000000000bd4       0x62 main.o
+                0x0000000000000bd4                MT_receive
+
+.text.leitura_teclado
+                0x0000000000000c36       0x60
+ .text.leitura_teclado
+                0x0000000000000c36       0x60 main.o
+                0x0000000000000c36                leitura_teclado
 
 .text.send_instruction_lcd_i2c
-                0x0000000000000378       0x5a
+                0x0000000000000c96       0x5a
  .text.send_instruction_lcd_i2c
-                0x0000000000000378       0x5a main.o
-                0x0000000000000378                send_instruction_lcd_i2c
+                0x0000000000000c96       0x5a main.o
+                0x0000000000000c96                send_instruction_lcd_i2c
 
-.text.delay_ms  0x00000000000003d2       0x54
+.text.rotina_ativado
+                0x0000000000000cf0       0x5a
+ .text.rotina_ativado
+                0x0000000000000cf0       0x5a main.o
+                0x0000000000000cf0                rotina_ativado
+
+.text.delay_ms  0x0000000000000d4a       0x54
  .text.delay_ms
-                0x00000000000003d2       0x54 main.o
-                0x00000000000003d2                delay_ms
+                0x0000000000000d4a       0x54 main.o
+                0x0000000000000d4a                delay_ms
 
-.text.delay_ns  0x0000000000000426       0x48
+.text.delay_ns  0x0000000000000d9e       0x48
  .text.delay_ns
-                0x0000000000000426       0x48 main.o
-                0x0000000000000426                delay_ns
+                0x0000000000000d9e       0x48 main.o
+                0x0000000000000d9e                delay_ns
 
 .text.passarValor
-                0x000000000000046e       0x42
+                0x0000000000000de6       0x42
  .text.passarValor
-                0x000000000000046e       0x42 main.o
-                0x000000000000046e                passarValor
+                0x0000000000000de6       0x42 main.o
+                0x0000000000000de6                passarValor
+
+.text.get_numero
+                0x0000000000000e28       0x3c
+ .text.get_numero
+                0x0000000000000e28       0x3c main.o
+                0x0000000000000e28                get_numero
+
+.text.algarismo
+                0x0000000000000e64       0x3a
+ .text.algarismo
+                0x0000000000000e64       0x3a main.o
+                0x0000000000000e64                algarismo
+
+.text.leitura_de_parametro
+                0x0000000000000e9e       0x2e
+ .text.leitura_de_parametro
+                0x0000000000000e9e       0x2e main.o
+                0x0000000000000e9e                leitura_de_parametro
 
 .text.send_instruction_lcd_nibble_i2c
-                0x00000000000004b0       0x2c
+                0x0000000000000ecc       0x2c
  .text.send_instruction_lcd_nibble_i2c
-                0x00000000000004b0       0x2c main.o
-                0x00000000000004b0                send_instruction_lcd_nibble_i2c
+                0x0000000000000ecc       0x2c main.o
+                0x0000000000000ecc                send_instruction_lcd_nibble_i2c
 
 .text.envia_frase_i2c
-                0x00000000000004dc       0x2c
+                0x0000000000000ef8       0x2c
  .text.envia_frase_i2c
-                0x00000000000004dc       0x2c main.o
-                0x00000000000004dc                envia_frase_i2c
+                0x0000000000000ef8       0x2c main.o
+                0x0000000000000ef8                envia_frase_i2c
+
+.text.limpa_linha
+                0x0000000000000f24       0x2c
+ .text.limpa_linha
+                0x0000000000000f24       0x2c main.o
+                0x0000000000000f24                limpa_linha
 
 .text.libgcc.mul
-                0x0000000000000508       0x1e
+                0x0000000000000f50       0x1e
  .text.libgcc.mul
-                0x0000000000000508       0x1e c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_umulhisi3.o)
-                0x0000000000000508                __umulhisi3
+                0x0000000000000f50       0x1e c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_umulhisi3.o)
+                0x0000000000000f50                __umulhisi3
 
-.text.setupI2C  0x0000000000000526       0x16
+.text.setupI2C  0x0000000000000f6e       0x16
  .text.setupI2C
-                0x0000000000000526       0x16 main.o
-                0x0000000000000526                setupI2C
+                0x0000000000000f6e       0x16 main.o
+                0x0000000000000f6e                setupI2C
 
 .text.libgcc.mul
-                0x000000000000053c       0x16
+                0x0000000000000f84       0x16
  .text.libgcc.mul
-                0x000000000000053c       0x16 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
-                0x000000000000053c                __muluhisi3
+                0x0000000000000f84       0x16 c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+                0x0000000000000f84                __muluhisi3
 
-.text           0x0000000000000552        0x4
- .text          0x0000000000000552        0x4 C:/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
-                0x0000000000000552                __vector_22
-                0x0000000000000552                __vector_1
-                0x0000000000000552                __vector_24
-                0x0000000000000552                __vector_12
-                0x0000000000000552                __bad_interrupt
-                0x0000000000000552                __vector_6
-                0x0000000000000552                __vector_3
-                0x0000000000000552                __vector_23
-                0x0000000000000552                __vector_25
-                0x0000000000000552                __vector_11
-                0x0000000000000552                __vector_13
-                0x0000000000000552                __vector_17
-                0x0000000000000552                __vector_19
-                0x0000000000000552                __vector_7
-                0x0000000000000552                __vector_5
-                0x0000000000000552                __vector_4
-                0x0000000000000552                __vector_9
-                0x0000000000000552                __vector_2
-                0x0000000000000552                __vector_21
-                0x0000000000000552                __vector_15
-                0x0000000000000552                __vector_8
-                0x0000000000000552                __vector_14
-                0x0000000000000552                __vector_10
-                0x0000000000000552                __vector_16
-                0x0000000000000552                __vector_18
-                0x0000000000000552                __vector_20
+.text.limpa_tela
+                0x0000000000000f9a       0x14
+ .text.limpa_tela
+                0x0000000000000f9a       0x14 main.o
+                0x0000000000000f9a                limpa_tela
+
+.text.libgcc    0x0000000000000fae        0xc
+ .text.libgcc   0x0000000000000fae        0xc c:/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+                0x0000000000000fae                __tablejump2__
+
+.text           0x0000000000000fba        0x4
+ .text          0x0000000000000fba        0x4 C:/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
+                0x0000000000000fba                __vector_22
+                0x0000000000000fba                __vector_1
+                0x0000000000000fba                __vector_24
+                0x0000000000000fba                __vector_12
+                0x0000000000000fba                __bad_interrupt
+                0x0000000000000fba                __vector_6
+                0x0000000000000fba                __vector_3
+                0x0000000000000fba                __vector_23
+                0x0000000000000fba                __vector_25
+                0x0000000000000fba                __vector_13
+                0x0000000000000fba                __vector_17
+                0x0000000000000fba                __vector_19
+                0x0000000000000fba                __vector_7
+                0x0000000000000fba                __vector_5
+                0x0000000000000fba                __vector_4
+                0x0000000000000fba                __vector_9
+                0x0000000000000fba                __vector_2
+                0x0000000000000fba                __vector_21
+                0x0000000000000fba                __vector_15
+                0x0000000000000fba                __vector_8
+                0x0000000000000fba                __vector_14
+                0x0000000000000fba                __vector_10
+                0x0000000000000fba                __vector_16
+                0x0000000000000fba                __vector_18
+                0x0000000000000fba                __vector_20
+
+.data.senhas    0x000000000080011b       0x10 load address 0x0000000000000fbe
+ .data.senhas   0x000000000080011b       0x10 main.o
+                0x000000000080011b                senhas
+
+.data.limite_timeout
+                0x0000000000800137        0x2 load address 0x0000000000000fce
+ .data.limite_timeout
+                0x0000000000800137        0x2 main.o
+                0x0000000000800137                limite_timeout
